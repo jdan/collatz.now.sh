@@ -1,5 +1,8 @@
 ## collatz.now.sh
 
+<img width="300" src="https://collatz.now.sh/20191209.svg">
+`<img width="300" src="https://collatz.now.sh/20191209.svg">`
+
 This generates SVGs for [Collatz](https://en.wikipedia.org/wiki/Collatz_conjecture) sequences.
 
 It is written in OCaml, and compiled to JavaScript using [BuckleScript](https://bucklescript.github.io/) to be served with [Now](https://now.sh).

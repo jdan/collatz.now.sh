@@ -1,7 +1,5 @@
 {
-  "dependencies": {
-    "express": "^4.17.1"
-  },
+  "dependencies": {},
   "scripts": {
     "//": "In dev you'll probably want to run `watch` and `now dev` in two windows",
     "watch": "bsb -make-world -w",
