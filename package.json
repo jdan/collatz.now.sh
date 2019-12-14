@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "serve": "nodemon src/server.bs.js"
+  },
+  "devDependencies": {
+    "bs-platform": "^7.0.1",
+    "nodemon": "^2.0.2"
+  }
+}
