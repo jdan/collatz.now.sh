@@ -8,6 +8,8 @@ external get: server -> string -> (req -> res -> res) -> server = "get" [@@bs.se
 external send: res -> string -> res = "send" [@@bs.send]
 external listen: server -> int -> server = "listen" [@@bs.send]
 
+external set: res -> string -> string -> res = "set" [@@bs.send]
+
 type params
 external _params : req -> params = "params" [@@bs.get]
 external _param : params -> string -> string = "" [@@bs.get_index]
@@ -16,6 +18,9 @@ let param req s = _param (_params req) s
 
 let () =
   express ()
-  |. get "/:name" (fun req res -> send res (param req "name" ^ "!!"))
+  |. get "/:num.svg" (fun req res -> 
+      set res "Content-Type" "image/svg+xml"
+      |. send (param req "num" |> int_of_string |> Svg.svg_of_collatz)
+    )
   |. listen 8080;
   print_endline "Ok."

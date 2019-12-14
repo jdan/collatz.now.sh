@@ -32,7 +32,7 @@ let viewbox width height zoom =
 
 let string_of_svg { width ; height ; zoom ; stroke ; children } =
   Printf.sprintf
-    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"%s\" width=\"800\">
+    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"%s\">
       <g fill=\"none\" stroke=\"black\" stroke-width=\"%d\" stroke-linecap=\"round\">%s</g>
     </svg>"
     (viewbox width height zoom)
@@ -76,6 +76,3 @@ let svg_of_collatz n =
   ; stroke = max 1 (max_num / 1000)
   }
   |> string_of_svg
-
-let () =
-  svg_of_collatz 20191209 |> print_endline
