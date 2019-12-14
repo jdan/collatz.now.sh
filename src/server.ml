@@ -9,24 +9,18 @@ external get: server -> string -> (req -> res -> res) -> server = "get" [@@bs.se
 external listen: server -> int -> server = "listen" [@@bs.send]
 
 (* res methods *)
-external set: res -> string -> string -> res = "set" [@@bs.send]
+external set_header : res -> string -> string -> res = "setHeader" [@@bs.send]
+external status: res -> int -> res = "status" [@@bs.send]
 external send: res -> string -> res = "send" [@@bs.send]
 
 (* params on the request *)
-type params
-external _params : req -> params = "params" [@@bs.get]
-external _param : params -> string -> string = "" [@@bs.get_index]
+type query
+external _query : req -> query = "query" [@@bs.get]
+external _get : query -> string -> string = "" [@@bs.get_index]
 
-let param req = _param (_params req)
+let query req = _get (_query req)
 
-let () =
-  express ()
-  |. get "/" (fun req res ->
-      send res "visit [number].svg. example: <a href=\"/2019.svg\">2019.svg</a>"
-    )
-  |. get "/:num.svg" (fun req res ->
-      set res "Content-Type" "image/svg+xml"
-      |. send (param req "num" |> int_of_string |> Svg.svg_of_collatz)
-    )
-  |. listen 8080;
-  print_endline "Ok."
+let default req res =
+  status res 200;
+  set_header res "Content-Type" "image/svg+xml";
+  send res (query req "num" |> int_of_string |> Svg.svg_of_collatz);

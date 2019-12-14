@@ -1,0 +1,10 @@
+{
+    "name": "collatz",
+    "version": 2,
+    "rewrites": [
+        {
+            "source": "/:num.svg",
+            "destination": "/api/server.bs?num=:num"
+        }
+    ]
+}

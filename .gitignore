@@ -27,4 +27,4 @@ lib/bs
 
 *.bs.js
 node_modules/
-public/
+api/

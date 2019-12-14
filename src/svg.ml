@@ -33,7 +33,7 @@ let viewbox width height zoom =
 let string_of_svg { width ; height ; zoom ; stroke ; children } =
   Printf.sprintf
     "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"%s\">
-      <g fill=\"none\" stroke=\"black\" stroke-width=\"%d\" stroke-linecap=\"round\">%s</g>
+      <g fill=\"none\" stroke=\"red\" stroke-width=\"%d\" stroke-linecap=\"round\">%s</g>
     </svg>"
     (viewbox width height zoom)
     stroke
