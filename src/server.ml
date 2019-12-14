@@ -9,8 +9,7 @@ external send: res -> string -> res = "send" [@@bs.send]
 external listen: server -> int -> server = "listen" [@@bs.send]
 
 let () =
-  let srv = express ()
-  in listen (
-    get srv "/" (fun req res -> send res "Hello, world!")
-  ) 8080;
+  express ()
+  |. get "/" (fun req res -> send res "Hello, world!!")
+  |. listen 8080;
   print_endline "Ok."
