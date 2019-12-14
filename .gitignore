@@ -25,6 +25,6 @@ lib/bs
 .merlin
 .bsb.lock
 
-*.bs.js
+src/*.js
 node_modules/
 api/

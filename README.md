@@ -11,6 +11,8 @@ It is written in OCaml, and compiled to JavaScript using [BuckleScript](https://
 
 In dev you'll want to run `yarn watch` and `now dev` in two separate windows.
 
+Then visit http://localhost:3000/api/server.bs?num=123
+
 ### Deploying
 
 `yarn deploy`

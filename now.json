@@ -4,7 +4,11 @@
     "rewrites": [
         {
             "source": "/:num.svg",
-            "destination": "/api/server.bs?num=:num"
+            "destination": "/api/collatz?num=:num"
+        },
+        {
+            "source": "/",
+            "destination": "/api/index"
         }
     ]
 }
