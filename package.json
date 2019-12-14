@@ -3,9 +3,13 @@
     "express": "^4.17.1"
   },
   "scripts": {
-    "start": "bsb -make-world -w",
-    "clean": "bsb -clean-world",
-    "serve": "nodemon src/server.bs.js"
+    "//": "In dev you'll probably want to run watch and server in two windows",
+    "watch": "bsb -make-world -w",
+    "serve": "nodemon src/server.bs.js",
+    "clean": "bsb -clean-world && rm -rf public",
+    "///": "build + start for now.sh",
+    "build": "bsb -make-world && mkdir -p public && cp src/*.bs.js public",
+    "start": "node public/server.bs.js"
   },
   "devDependencies": {
     "bs-platform": "^7.0.1",

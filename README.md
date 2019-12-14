@@ -1,16 +1,5 @@
+## collatz.now.sh
 
+This generates SVGs for [Collatz](https://en.wikipedia.org/wiki/Collatz_conjecture) sequences.
 
-# Build
-```
-npm run build
-```
-
-# Watch
-
-```
-npm run watch
-```
-
-
-# Editor
-If you use `vscode`, Press `Windows + Shift + B` it will build automatically
+It is written in OCaml, and compiled to JavaScript using [BuckleScript](https://bucklescript.github.io/) to be served with [Express](https://expressjs.com/)
