@@ -9,6 +9,9 @@
     "module": "commonjs",
     "in-source": false
   },
+  "js-post-build": {
+    "cmd": "./cp-to-api.sh"
+  },
   "suffix": ".js",
   "bs-dependencies": [],
   "warnings": {

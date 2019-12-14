@@ -4,8 +4,7 @@
     "//": "In dev you'll probably want to run `watch` and `now dev` in two windows",
     "watch": "bsb -make-world -w",
     "clean": "bsb -clean-world && rm -rf api",
-    "build-now": "bsb -make-world && mkdir -p api && cp lib/js/src/*.js api",
-    "deploy": "yarn build-now && now"
+    "deploy": "bsb -make-world && now"
   },
   "devDependencies": {
     "bs-platform": "^7.0.1"
